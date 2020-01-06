@@ -2,11 +2,10 @@ const assert = require('assert');
 
 const urlJoin = require('../src/UrlJoin');
 
-describe('UrlJoin', function () {
-    context('context', function () {
-        it('should join url-s', function () {
-            const joinedUrl = urlJoin.join(['baseUrl', '-secondUrl']);
-            assert.equal(joinedUrl, 'baseUrl-secondUrl');
-        });
+describe('UrlJoin', () => {
+    it('should join url-s', () => {
+        const joinedUrl = urlJoin.join('baseUrl', '-secondUrl');
+        assert.equal(joinedUrl, 'baseUrl-secondUrl');
+        assert.equal(urlJoin.join(), '');
     });
 });
